@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Form</title>
+    
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    
+    <style>
+        *{
+            margin : 0;
+            padding : 0;
+            font-family: 'Raleway';
+            overflow: hidden;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to top left, #af89f6, #8da5fa);
+            background-image: url(https://media.istockphoto.com/id/943430822/id/vektor/latar-belakang-vektor-peta-topografi-peta-kontur-topo-pada-latar-belakang-putih.webp?s=1024x1024&w=is&k=20&c=7hdqAPw1hQManpdcDEA0nP6yAZIIfp59XMiLenbXhjc=);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .panel{
+            width: 30%;
+            padding: 20px;
+
+        }
+        fieldset{
+            width: 30%;
+            height: auto;
+            background-color: rgba(0, 0, 0, 0.562);
+            border: none;
+            box-shadow: 10px 10px 30px #0000002e ;
+            border-radius: 5%;
+    
+        }
+        legend{
+            text-align: center;
+            background-color: rgb(240, 248, 255);
+            padding:5px;
+            margin: 10px;
+            box-shadow: 5px 5px 20px #3939392e;
+            border-radius: 100px;
+        }
+        form{
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 5%;
+        }
+        input{
+            width: 95%;
+            padding: 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <fieldset>
+            <legend>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" width="100px" height="100px" alt="">
+            </legend>
+            <form action="#" method="post">
+                <input type="text" required placeholder="Enter your username">
+                <input type="email" required placeholder="Enter your Email">
+                <input type="password" required placeholder="Enter your password">
+                <input type="password" required placeholder="Confirm you password">
+                <input type="submit" class="btn_login" value="login">
+            </form>
+        </fieldset>
+        
+    </div>
+    
+</body>
+</html>
