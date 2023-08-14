@@ -71,29 +71,33 @@
         .text-title{
             font-size: 3em;
             font-weight: bold;
+            color: #fff;
         }
         .text-tagline{
             font-size: 1.5em;
             margin-top: 30px;
+            color: #fff;
         }
         .button-explore{
             margin-top: 30px;
-            border: #ffffff;
+            border-color: #fff;
         }
         .btn-explore{
-            background-color: #347499;
+            background-color: #ffffff;
             padding: 10px 15px;
             border-radius: 1000px;
             font-weight: 700;
             text-decoration: none;
-            color: #ffffff;
+            color: #479fd2;
             transition-duration: 0.4s;
             cursor: pointer;
-            border: #ffffff;
+            border-color: #fff;
+            border-style: outset;
         }
         .btn-explore:hover{
-            background-color: #ffffff;
-            color: #295a76;
+            background-color: #479fd2;
+            color: #fff;
+            border-color: #fff;
         }
         .img-brand img{
             width: 300px;
@@ -105,6 +109,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background: #479fd2;
         }
         .services-page{
             width: 100vw;
@@ -114,7 +119,7 @@
         }
         .services-title{
             width: 100%;
-            height: 20%;
+            height: 50%;
             font-family: Raleway;
             font-size: larger;
             display: flex;
@@ -124,19 +129,19 @@
         }
         .service-box-area{
             width: 100%;
-            height: 100%;
-            display: grid;
-            grid-template-columns: 30% 30% 30%;
+            display: flex;
             justify-content: center;
             
 
         }
         .box-1{
-            height: 200px;
+            flex-wrap: wrap;
+            height: 150px;
+            width: 20%;
             background: #fff;
             padding: 10px;
             margin: 10px;
-            border-radius: 10%;
+            border-radius: 8px;
         }
 
         
@@ -184,7 +189,10 @@
             <p>Our Services</p>
         </div>
         <div class="service-box-area">
-            <div class="box-1">1</div>
+            <div class="box-1">
+                <h1>title</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, dicta.</p>
+            </div>
             <div class="box-1">2</div>
             <div class="box-1">3</div>
         </div>
