@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing-Bocchi</title>
+    <style>
+        *{
+            margin: 0;
+           padding: 0;
+           overflow: hidden;
+
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background: #e4e4e4;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        .ball{
+            /*             
+            width: 100px;
+            height: 100px;
+            background: #e41a1a;
+            border-radius: 100px; */
+            width: 100px;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            from{
+                transform: translateY(300px) scaleX(1.5);
+            }
+            to{
+                transform: translateY(-100px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ball">
+            <img src="https://chpic.su/_data/stickers/r/RandomBTR/RandomBTR_001.webp" width= 100px>
+        </div>
+
+    </div>
+</body>
+</html>
