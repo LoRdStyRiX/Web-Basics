@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+
+        }
+
+        .title {
+            display: grid;
+            width: 100vw;
+            height: 60px;
+            padding: 20px;
+            background-color: rgb(136, 136, 136);
+            align-items: center;
+            justify-content: center;
+            color: rgb(255, 255, 255);
+            font-size: 5.5em;
+
+
+        }
+
+        .box {
+            width: 100vw;
+            padding: 20px;
+            align-items: center;
+            justify-content: center;
+            display: grid;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .thead {
+            background-color: rgb(179, 111, 111);
+        }
+
+        .th {
+            margin-top: 40px;
+            padding: 10px;
+        }
+
+        thead,tbody,th,td,tr {
+            padding: 20px;
+        }
+        audio {
+
+            filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+            width: 300px;
+            height: 25px;
+            color: rgb(177, 118, 40);
+            margin: 5px;
+            padding: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <p>Al-Quran List</p>
+    </div>
+    <div class="box">
+        <div class="container">
+            <table>
+                <thead>
+                    <th>Name </th>
+                    <th>Verses </th>
+                    <th>Chapter </th>
+                    <th>Published in </th>
+                    <th>Audio </th>
+                    <th>Type </th>
+                </thead>
+                <tbody id="list-data">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        const url = 'https://raw.githubusercontent.com/penggguna/QuranJSON/master/quran.json'
+        const listData = document.getElementById('list-data');
+
+
+        fetch(url).then(response => response.json()).then(data => {
+            // const objData = data.data;
+            // const listJadwal = objData;
+
+            data.forEach(el => {
+                const row = document.createElement('tr');
+
+                const name = document.createElement('td');
+                name.textContent = el.name
+
+                const number_of_ayah = document.createElement('td');
+                number_of_ayah.textContent = el.number_of_ayah
+
+                const number_of_surah = document.createElement('td');
+                number_of_surah.textContent = el.number_of_surah
+
+                const place = document.createElement('td');
+                place.textContent = el.place
+
+                const recitation = document.createElement('audio');
+                recitation.setAttribute('controls', '');
+                recitation.setAttribute('src', el.recitation);
+
+
+                const type = document.createElement('td');
+                type.textContent = el.type
+
+
+                listData.appendChild(row);
+                row.appendChild(name);
+                row.appendChild(number_of_ayah);
+                row.appendChild(number_of_surah);
+                row.appendChild(place);
+                row.appendChild(recitation);
+                row.appendChild(type);
+
+                var tblrows = document.getElementsByTagName('td');
+
+                // for(i=0;i<tblrows.length;i++){
+                //     if(i%2==0) tblrows[i].style.backgroundColor = '#fff';
+                //     else tblrows[i].style.backgroundColor = '#cbcbcb';
+                // }
+
+                document.querySelectorAll('tr:nth-child(even)').forEach((evenRow) => {
+                    evenRow.style.backgroundColor = '#fff';
+                });
+                document.querySelectorAll('tr:nth-child(odd)').forEach((oddRow) => {
+                    oddRow.style.backgroundColor = '#cbcbcb';
+                });
+
+            })
+
+
+        })
+    </script>
+
+</body>
+
+</html>
