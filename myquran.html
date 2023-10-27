@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Siswa</title>
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <th>Tanggal</th>
+                <th>Imsak</th>
+                <th>Subuh</th>
+                <th>Dzuhur</th>
+                <th>Ashar</th>
+                <th>Magrib</th>
+                <th>Isya</th>
+            </thead>
+            <tbody id="list-data">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+
+        const url = 'https://api.myquran.com/v1/sholat/jadwal/0610/2023/10'
+        const listData = document.getElementById('list-data');
+
+
+        fetch(url).then(response => response.json()).then(data => {
+            const mainData = data.data;
+            const listJadwal = mainData.jadwal;
+
+            listJadwal.forEach(el => {
+                const row = document.createElement('tr');
+
+                const tanggal = document.createElement('td');
+                tanggal.textContent = el.tanggal
+
+                const imsak = document.createElement('td');
+                imsak.textContent = el.imsak
+
+                const subuh = document.createElement('td');
+                subuh.textContent = el.subuh
+
+                const dzuhur = document.createElement('td');
+                dzuhur.textContent = el.dzuhur
+
+                const ashar = document.createElement('td');
+                ashar.textContent = el.ashar
+
+                const maghrib = document.createElement('td');
+                maghrib.textContent = el.maghrib
+
+                const isya = document.createElement('td');
+                isya.textContent = el.isya
+
+                listData.appendChild(row);
+                row.appendChild(tanggal);
+                row.appendChild(imsak);
+                row.appendChild(subuh);
+                row.appendChild(dzuhur);
+                row.appendChild(ashar);
+                row.appendChild(maghrib);
+                row.appendChild(isya);
+
+
+
+
+            })
+
+            
+        })
+
+
+    </script>
+
+</body>
+
+</html>

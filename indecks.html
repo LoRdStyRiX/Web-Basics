@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>owo</title>
+
+    <style>
+           *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            background-color: rgb(236, 236, 236);
+            border-radius: 20px;
+        }
+        .card{
+            width: 30%;
+            height: 60%;
+            background-color: rgb(51, 115, 178);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .kartu{
+            width: 30%;
+            height: 30%;
+            background-color: rgb(243, 243, 243);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 15px;
+            font-family: poppins;
+            font-size: 40px;
+            color: rgb(57, 140, 64);
+        }
+        .content{
+            color: rgb(238, 238, 238);
+            margin: 30px;
+            line-height: 30px;
+            margin-bottom: 40px;
+        }
+        .button{
+            background-color: rgb(240, 240, 240);
+            padding: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: rgb(51, 115, 178);
+            margin: 30px;
+
+        }
+        .title{
+            margin: 10px;
+        }
+        .hero{
+            background-color: rgb(57, 140, 64);
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+
+        }
+        .hero2{
+            background-color: rgb(175, 183, 58);
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+        .about{
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: row;
+            background-color: rgb(82, 82, 160);
+
+        }
+        .card-img{
+            margin: 5px;
+            width: 80%;
+            height: 70%;
+
+        }
+        .card2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 20%;
+            height: 40vh;
+            border-radius: 20px;
+            margin: 10px;
+        }
+        .img{
+            height: 20vh;
+        }
+        .card3{
+            width: 45%;
+            height: 60%;
+            background-color: rgb(240, 240, 240);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="container"></div>
+    <div class="hero" id="hero"></div>
+    <div class="about" id="about"></div>
+
+    <script>
+
+
+// card basic
+        var lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+
+        const container = document.getElementById('container');
+
+        const card = document.createElement('div');
+
+        card.classList.add('card');
+
+        const title = document.createElement('h1');
+        title.textContent = "Card";
+
+        const line = document.createElement('hr')
+
+        const content = document.createElement('p');
+        content.classList.add('content')
+        content.textContent = lorem
+
+        document.body.append(card);
+
+        const button = document.createElement('a');
+        button.classList.add('button')
+        button.href = 'https://lordstyrix.github.io'
+        button.textContent = 'Visit my Website'
+
+
+        container.append(card);
+        card.append(title);
+        card.append(line);
+        card.append(content);
+        card.append(button);
+
+        // =======================================================================================================================
+
+
+        // card hero
+        const hero = document.getElementById('hero');
+
+        const drink = ['fanta', 'cocacola', 'sprite', 'pocari'];
+        drink.forEach((item)=>{
+            const kartu = document.createElement('div');
+            kartu.classList.add('kartu');
+            const textDrink = document.createElement("p");
+            textDrink.innerText = item;
+
+            hero.append(kartu);
+            kartu.append(textDrink);
+        });
+
+        // ======================================================================================================================
+
+
+    //    card about / image
+
+        const about = document.getElementById('about');
+        const cardContent = document.createElement('div');
+        cardContent.classList.add('card3');
+
+        const img = document.createElement('img');
+        img.src = 'https://berita.yodu.id/wp-content/uploads/2022/03/3-okkotsu-yuta-jujutsu-kaisen_res.jpg'
+
+        const konten = document.createElement('p');
+        konten.textContent = "Yuta Okkotsu (乙おっ骨こつ憂ゆう太た Okkotsu Yūta?) is a major supporting character in the Jujutsu Kaisen series and the main protagonist of its prequel series, Jujutsu Kaisen 0: Jujutsu High. He was initially a special grade cursed human haunted by his late childhood friend, Rika Orimoto. Satoru Gojo mentored Yuta and enrolled him at Tokyo Jujutsu High. Yuta is currently a second-year student at Jujutsu High where he works as a jujutsu sorcerer. He was training overseas in Africa with Miguel until after the Shibuya Incident when he returned to Tokyo.";
+
+        about.append(cardContent);
+        cardContent.append(img)
+        cardContent.append(konten)
+
+
+
+
+        // ==============================================================================================
+
+        let dataLoop = ['a', 'b', 'd']
+        dataLoop.forEach((item) =>{
+        const about = document.getElementById('about');
+        const cardAbout = document.createElement('div');
+        cardAbout.classList.add('card2');
+        cardAbout.style.backgroundColor = '#fffffff';
+        cardAbout.style.margin = 30;
+
+        const cardImg = document.createElement('img');
+        cardImg.src = '';
+        cardImg.classList.add('card-img');
+
+        const cardContent = document.createElement('div');
+        cardContent.classList.add('card-content');
+        cardContent.textContent = item;
+
+        // about.append(cardAbout);
+        // cardAbout.append(cardImg);
+        // cardAbout.append(cardContent);
+        })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Siswa</title>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Major</th>
+                <th>Address</th>
+                <th>Contacts</th>
+
+            </thead>
+            <tbody id="list-data">
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- <script>
+        const xhr = new XMLHttpRequest();
+        const listData = document.getElementById('list-data');
+
+        xhr.open('GET', 'data.json');
+
+        xhr.onload = function() {
+            if (xhr.status === 200){
+
+                const data = JSON.parse(xhr.responseText);
+
+                data.forEach(el => {
+                    const row = document.createElement('tr');
+                    const name = document.createElement('td');
+                    name.innerText = el.name;
+
+                    const major = document.createElement('td');
+                    major.innerText = el.major;
+
+                    const address = document.createElement('td');
+                    address.innerText = el.address;
+
+                    const contacts = document.createElement('td');
+                    contacts.innerText = el.contacts;
+
+                    listData.appendChild(row);
+                    row.appendChild(name);
+                    row.appendChild(major);
+                    row.appendChild(address);
+                    row.appendChild(contacts);
+                })
+            
+            } else {
+                console.log('data failed error')
+            }
+        }
+        xhr.send()
+    </script> -->
+
+    <script>
+
+        const url = 'https://653082966c756603295eb524.mockapi.io/api/v1/users'
+        const listData = document.getElementById('list-data');
+
+
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+
+            data.forEach(el => {
+                    const row = document.createElement('tr');
+                    const name = document.createElement('td');
+                    name.innerText = el.name;
+
+                    const major = document.createElement('td');
+                    major.innerText = el.major;
+
+                    const address = document.createElement('td');
+                    address.innerText = el.address;
+
+                    const contacts = document.createElement('td');
+                    contacts.innerText = el.contacts;
+
+                    listData.appendChild(row);
+                    row.appendChild(name);
+                    row.appendChild(major);
+                    row.appendChild(address);
+                    row.appendChild(contacts);
+                })
+
+        })
+
+
+    </script>
+
+</body>
+</html>

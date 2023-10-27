@@ -1,0 +1,27 @@
+[
+    {
+        "name": "billy kimber",
+        "major": "RPL",
+        "address": "st. louis",
+        "contacts": "@billkim"
+    },
+    {
+        "name": "john doe",
+        "major": "TKJ",
+        "address": "st. sesame",
+        "contacts": "@johnd"
+    },
+    {
+        "name": "felix",
+        "major": "RPL",
+        "address": "st. bridge",
+        "contacts": "@pewdiepie"
+    },
+    {
+        "name": "master chief",
+        "major": "DKV",
+        "address": "planet 27795",
+        "contacts": "@mstrchief"
+    }
+
+]

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boogie woogie</title>
+</head>
+<body>
+    <style>
+        *{
+            color: azure;
+        }
+        .about{
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: row;
+            background-color: blue;
+
+        }
+        .card-img{
+            margin: 5px;
+            width: 80%;
+            height: 70%;
+
+        }
+        .card2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 20%;
+            height: 40vh;
+            border-radius: 20px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        let dataLoop = ['a', 'b', 'd']
+        loop.forEach((item) =>{
+        const about = document.getElementById('about');
+        const cardAbout = document.createElement('div');
+        cardAbout.classList.add('card2');
+        cardAbout.style.backgroundColor = '#fffffff';
+        cardAbout.style.margin = 30;
+
+        const cardImg = document.createElement('img');
+        cardImg.src = '';
+        cardImg.classList.add('card-img');
+
+        const cardContent = document.createElement('div');
+        cardContent.classList.add('card-content');
+        cardContent.textContent = item;
+
+        about.append(cardAbout);
+        cardAbout.append(cardImg);
+        cardAbout.append(cardContent);
+        })
+    </script>
+</body>
+</html>

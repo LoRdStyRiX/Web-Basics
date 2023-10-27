@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        .container{
+            width: 100vw;
+            display: flex;
+        }
+        .card-food{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            grid-gap: 20px;
+        }
+        .card{
+            background: #b81f1f;
+            width: 100%;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        .card-img{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .card-img img{
+            width: 60%;
+        }
+        .card-title{
+            margin: 15px;
+        }
+        .button-pesan{
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-pesan a{
+            background-color: white;
+            text-decoration: none;
+            color: black;
+            padding: 20px 40px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container" id="container">
+        <div class="card-food" id="card-food">
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://www.justonecookbook.com/wp-content/uploads/2023/04/Spicy-Shoyu-Ramen-8055-I.jpg" alt="">
+                </div>
+                <div class="card-title">
+                    Ramen
+                </div>
+                <div class="button-pesan">
+                    <a href="#">Order now!</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://www.justonecookbook.com/wp-content/uploads/2023/04/Spicy-Shoyu-Ramen-8055-I.jpg" alt="">
+                </div>
+                <div class="card-title">
+                    Ramen
+                </div>
+                <div class="button-pesan">
+                    <a href="#">Order now!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script>
+        const food = [
+            {
+                image : "url", 
+                name : "Ramen"
+            },
+            {
+                image : "url",
+                name : "Sushi"
+            },
+            {
+                image : "url",
+                name : "Sashimi"
+            },
+            {
+                image : "url",
+                name : "Kaarage"
+            },
+        ]
+
+
+        food.forEach((item)=>{
+        const container = document.getElementById('container');
+        const card = document.createElement('div');
+        container.classList.add('card');
+
+        const cardlog = document.createElement('img');
+        cardlog.src = item.gambar
+        cardlog.classList.add('card-log');
+            
+        const button = document.createElement('a');
+        button.classList.add('button-pesan')
+        button.href = 'instagram.com';
+        button.textContent = 'Order now!';
+
+        const cardcontent = document.createElement('div');
+        cardcontent.classList.add('card');
+        cardcontent.textContent = item.name;
+
+        food.append(container);
+        food.append(card);
+        card.append(cardlog);
+        card.append(cardcontent);
+        card.append(button);
+
+            
+        });
+
+
+        
+    </script>
+</body>
+</html>

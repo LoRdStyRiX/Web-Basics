@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talble</title>
+</head>
+<body>
+    
+    <div class="container">
+        <table class="table-data" id="table-data">
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Major</th>
+                <th>Address</th>
+            </thead>
+            <tbody>
+                <tr id="data">
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <script>
+        const name = {
+            name : "John doe",
+            age : "17",
+            major : "Fullstack",
+            address : "69th dayeuh street",
+        }
+
+        const values = Object.values(name);
+        values.forEach(value =>{
+            const data = document.getElementById('data');
+            const tableData = document.createElement('td');
+            tableData.innerText = value;
+
+            data.append(tableData);
+        })
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

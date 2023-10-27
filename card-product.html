@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Menu</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+        }
+        .container{
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header{
+            margin-top: 5vh;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .title{
+            font-size: 2em;
+        }
+        .content{
+            width: 80%;
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            grid-gap: 20px;
+        }
+        .card{
+            width: 95%;
+            background-color: bisque;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .card-image{
+            width: 100%;
+        }
+        .card-image img{
+            width: 100%;
+            border-radius: 10px 10px 0 0 ;
+        }
+        .card-content{
+            width: 100%;
+            margin-top: 20px;
+            text-align: center;
+
+
+        }
+        .price-title{
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">
+                <p>Menu</p>
+            </div>
+            <div class="button-area">
+                <button id="button-add">Add menu</button>
+                <button id="button-remove">remove menu</button>
+            </div>
+        </div>
+        <div class="content">
+            <!-- <div class="card">
+                <div class="card-image">
+                    <img src="https://cdn.vox-cdn.com/thumbor/DOKc68WRCUcYpOoitw0vZeOiQQY=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9014605/Sbux_Horchata_Frappuccino_KnockOut.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <p class="price-title">Rp 45000</p>
+                    <p class="menu-title">Frappuccino</p>
+                </div>
+            </div> -->
+            
+        </div>
+    </div>
+
+    <script>
+        const content = document.querySelector('.content');
+
+        const add = document.getElementById('button-add');
+        const remove = document.getElementById('button-remove');
+
+        const data = [
+            {
+                image : 'https://cdn.vox-cdn.com/thumbor/DOKc68WRCUcYpOoitw0vZeOiQQY=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9014605/Sbux_Horchata_Frappuccino_KnockOut.jpg',
+                price : 'Rp 45000',
+                name : 'frappuccino'
+            },
+            {
+                image : 'https://c.ndtvimg.com/2019-11/hdmci5_starbucks_625x300_05_November_19.jpg?im=FaceCrop,algorithm=dnn,width=1200,height=886',
+                price : 'Rp 47000',
+                name : 'mocha frappuccino'
+            },
+            {
+                image : 'https://target.scene7.com/is/image/Target/GUEST_9dfc9ec7-c7ca-48f2-973f-f88f8e8b628d?wid=488&hei=488&fmt=pjpeg',
+                price : 'Rp 40000',
+                name : 'iced coffee medium roast'
+            },
+            {
+                image : 'https://www.starbucksathome.com/gb/sites/default/files/2022-08/SBUX_Premium-Mixes-4_AOA_Caramel-Latte_7613038631110_Website_LongShadow_220420_1652346876103.png',
+                price : 'Rp 55000',
+                name : 'caramel latte cardboard'
+            },
+
+
+        ]
+
+
+        data.forEach(element =>{
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            const cardImage = document.createElement('div');
+            cardImage.classList.add('card-image');
+
+            const image = document.createElement('img');
+            image.src = element.image;
+
+            const cardContent = document.createElement('div');
+            cardContent.classList.add('card-content');
+
+            const priceTitle = document.createElement('p');
+            priceTitle.classList.add('priceTitle');
+            priceTitle.innerText = element.price
+
+            const menuTitle = document.createElement('p');
+            menuTitle.classList.add('menuTitle');
+            menuTitle.innerText = element.name;
+
+            content.appendChild(card);
+            card.appendChild(cardImage);
+            cardImage.appendChild(image);
+            card.appendChild(cardContent);
+            card.appendChild(cardContent);
+            cardContent.appendChild(priceTitle);
+            cardContent.appendChild(menuTitle);
+
+        })
+
+        add.addEventListener('click', function(){
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            const cardImage = document.createElement('div');
+            cardImage.classList.add('card-image');
+
+            const image = document.createElement('img');
+            image.src = 'https://media.istockphoto.com/id/530855579/id/foto/cangkir-kopi-starbucks-dengan-topi.jpg?s=612x612&w=0&k=20&c=MNnuhcu0hL8gewLrRl2_WL1qO1b9dR7BvghyXNjdm4E=';
+
+            const cardContent = document.createElement('div');
+            cardContent.classList.add('card-content');
+
+            const priceTitle = document.createElement('p');
+            priceTitle.classList.add('priceTitle');
+
+            const menuTitle = document.createElement('p');
+            menuTitle.classList.add('menuTitle');
+    
+
+
+            content.appendChild(card);
+            card.appendChild(cardImage);
+            cardImage.appendChild(image);
+            card.appendChild(cardContent);
+            cardContent.appendChild(priceTitle);
+            cardContent.appendChild(menuTitle);
+
+
+
+
+        })
+        remove.addEventListener('click', function(){
+            const data = document.querySelector('.content');
+            data.lastElementChild.remove();
+
+        })
+
+
+    </script>
+</body>
+</html>
